@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script src="jquery-2.2.2.min.js"></script>
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				width: 100%;
+			}
+			
+			li {
+				list-style: none
+			}
+			
+			a {
+				text-decoration: none;
+				color: white;
+			}
+			
+			a:hover {
+				color: deepskyblue;
+			}
+			
+			.top {
+				width: 100%;
+				overflow: hidden;
+				padding-bottom: 25px;
+			}
+			/*头部登录区域*/
+			
+			.top .login {
+				width: 100%;
+				background: #f7f7f7;
+				height: 30px;
+				line-height: 30px;
+				color: #6d6d6d;
+				border-bottom: 1px solid #e8e8e8;
+			}
+			
+			.top .login span {
+				float: right;
+				font-size: 14px;
+				font-weight: bold;
+				margin-right: 33px;
+			}
+			
+			.top .login span img {
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			
+			.top .login div {
+				float: left;
+				font-size: 12px;
+				margin-left: 43px;
+			}
+			
+			#login {
+				color: #06C
+			}
+			
+			#login:hover {
+				color: #F00
+			}
+			
+			.title {
+				width: 100%;
+				height: 30px;
+				background: #f7f7f7;
+				font-size: 12px;
+			}
+			
+			.box {
+				width: 218px;
+				overflow: hidden;
+				background: #354156;
+				float: left;
+			}
+			
+			.center {
+				width: 1200px;
+				overflow: hidden;
+				border: 1px solid #CCCCCC;
+				margin: 0 auto;
+				margin-top: 50px;
+			}
+			
+			.title li {
+				line-height: 20px;
+				float: left;
+			}
+			
+			.title li:nth-child(1) {
+				line-height: 30px;
+				margin-left: 90px;
+			}
+			
+			.title li:nth-child(2) {
+				margin-left: 1190px;
+				margin-top: -25px;
+			}
+			
+			.banner {
+				background: white;
+			}
+			
+			.wz {
+				font-size: 30px;
+				text-align: center;
+			}
+			
+			.user {
+				width: 218px;
+				height: 180px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.user img {
+				margin-left: 40px;
+				margin-top: 20px;
+			}
+			
+			.user font {
+				margin-left: 45px;
+				margin-top: 5px;
+			}
+			
+			.box_1 {
+				width: 218px;
+				height: 60px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.box_0 {
+				width: 218px;
+				height: 60px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.box_1 a {
+				text-align: center;
+				line-height: 60px;
+				display: block;
+			}
+			
+			.box_0:hover .box_1 {
+				background: #52688f;
+			}
+			
+			.top_1 {
+				float: left;
+				display: block;
+				width: 982px;
+				height: 40px;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			.top_1 font {
+				line-height: 40px;
+				margin-left: 20px;
+			}
+			
+			.top_1 img {
+				float: right;
+				margin-top: 2px;
+			}
+			
+			.hot {
+				float: left;
+				width: 982px;
+				height: 140px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			
+			.hot_1 {
+				width: 152px;
+				height: 140px;
+				border-right: 1px solid #CCCCCC;
+				float: left;
+			}
+			
+			.table1 {
+				width: 983px;
+		
+				margin-left: 218px;
+			}
+			
+			.table1 table {
+				width: 900px;
+				margin: 0 auto;
+				border-radius:12px ;
+			}
+			
+			.table1 table td {
+				font-size: 18px;
+				text-align: center;
+			}
+			
+			.table1 table td a {
+				color: black;
+			}
+			
+			.table1 table td a:hover {
+				color: white;
+				background: deepskyblue;
+			}
+			
+			.sosuo {
+				width: 300px;
+				height: 40px;
+				position: relative;
+				margin-top: 20px;
+				margin-left: 250px;
+				margin-bottom:20px;
+				border: 2px solid #CCCCCC;
+				border-radius: 5px;
+			}
+			
+			.sosuo_1 {
+				width: 150px;
+				height: 43px;
+				background: #cedbf2;
+				border-radius: 5px;
+			}
+
+			.sosuo_1:hover{background: deepskyblue;}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+			<!--登录-->
+			<div class="login">
+				<div>您好！欢迎来到皮皮虾影院！
+					<a href="#" id="login">请登录</a>
+					<a href="#">立即注册</a>
+				</div>
+				<span><img src="images/tel_icon.jpg" width="16" height="16" />免费咨询：400-000-0000</span> </div>
+
+		</div>
+		</div>
+		<div class="wz">
+			欢迎使用皮皮虾影院管理系统
+		</div>
+
+		<div class="center">
+			<div class="box">
+				<div class="user">
+					<img src="images/14.jpg"><br/>
+					<font color="white">管理员:小萝莉</font>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="administrator.html">个人首页</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="影片管理.html">影片管理</a>
+						</font>
+					</div>
+				</div>
+
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="票务管理.html">票务管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="座位管理.html">座位管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="影厅管理.html">影厅管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="演出计划.html">演出计划</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="用户管理.html">用户管理</a>
+						</font>
+					</div>
+				</div>
+			
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="login.html">退出系统</a>
+						</font>
+					</div>
+				</div>
+
+			</div>
+			<div class="table1">
+				<input type="text" class="sosuo" id="search"/>
+				<input type="submit" class="sosuo_1" onclick="p2()"/value="搜索">
+				<table border="1" bordercolor="#4b5b77" id="table1">
+					<tr>
+						<td bgcolor="#cccccc">票id</td>
+						<td bgcolor="#cccccc">座位id</td>
+						<td bgcolor="#cccccc">演出计划id</td>
+						<td bgcolor="#cccccc">票价</td>
+						<td bgcolor="#cccccc">票状态</td>
+						<td bgcolor="#cccccc">票时间</td>
+						<td bgcolor="#cccccc">修改票</td>
+					</tr>
+				</table>
+			</div>
+	<script type="text/javascript">
+			function p2()
+			{
+				var s=document.getElementById("search").value;
+				$.ajax
+				({
+					url:"http://localhost:666/ticket/query?sched_id="+s,
+					type:'get',
+					dataType:'jsonp',
+					success:function(data){
+							var table1=document.getElementById("table1");  
+							var childs = table1.childNodes; 
+							var k=childs.length
+							if(childs.length>2)
+							{
+								for(var i = 2; i < k; i++) 
+								{    
+    							table1.removeChild(childs[2]);    
+    							}
+							}
+							for(var i=0;i<data.Detail.length;i++)
+							{
+								var s1=document.createElement('tr');
+								var s2=document.createElement('tr');
+								var a3=document.createElement('td');
+								var a4=document.createElement('td');
+								var a5=document.createElement('td');
+								var a6=document.createElement('td');
+								var a7=document.createElement('td');
+								var a8=document.createElement('td');
+								var a11=document.createElement('td');
+								var s3=document.createTextNode(data.Detail[i].ticket_id);
+								var s4=document.createTextNode(data.Detail[i].seat_id);
+								var s5=document.createTextNode(data.Detail[i].sched_id);
+								var s6=document.createTextNode(data.Detail[i].ticket_price);
+								var s7=document.createTextNode(data.Detail[i].ticket_status);
+								var s8=document.createTextNode(data.Detail[i].ticket_locked_time);
+								var s11=document.createTextNode('修改');
+								var b1=document.createElement('a');
+								var b2=document.createElement('a');
+								var b3=document.createElement('a');
+								s1.id=data.Detail[i].ticket_id;
+								b3.href="";
+								b3.appendChild(s11);
+								a3.appendChild(s3);
+								a4.appendChild(s4);
+								a5.appendChild(s5);
+								a6.appendChild(s6);
+								a7.appendChild(s7);
+								a8.appendChild(s8);
+								a11.appendChild(b3);
+								s1.appendChild(a3);
+								s1.appendChild(a4);
+								s1.appendChild(a5);
+								s1.appendChild(a6);
+								s1.appendChild(a7);
+								s1.appendChild(a8);
+								s1.appendChild(a11);
+								table1.appendChild(s1);
+							}
+					},
+				});
+			}
+	</script>	
+	</body>
+
+</html>

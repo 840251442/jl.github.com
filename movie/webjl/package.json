@@ -1,0 +1,21 @@
+{
+  "name": "XiyouMobileSite-FE",
+  "version": "1.0.0",
+  "description": "XiyouMobileSite",
+  "author": "",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "express": "~4.2.0",
+    "express-session": "^1.15.2",
+    "fs": "0.0.1-security",
+    "multiparty": "^4.1.3",
+    "mysql": "^2.13.0",
+    "request": "~2.37.0",
+    "util": "^0.10.3"
+  }
+}

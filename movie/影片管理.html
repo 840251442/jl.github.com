@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-2.2.2.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				width: 100%;
+			}
+			
+			li {
+				list-style: none
+			}
+			
+			a {
+				text-decoration: none;
+				color: white;
+			}
+			
+			a:hover {
+				color: deepskyblue;
+			}
+			
+			.top {
+				width: 100%;
+				overflow: hidden;
+				padding-bottom: 25px;
+			}
+			/*头部登录区域*/
+			
+			.top .login {
+				width: 100%;
+				background: #f7f7f7;
+				height: 30px;
+				line-height: 30px;
+				color: #6d6d6d;
+				border-bottom: 1px solid #e8e8e8;
+			}
+			
+			.top .login span {
+				float: right;
+				font-size: 14px;
+				font-weight: bold;
+				margin-right: 33px;
+			}
+			
+			.top .login span img {
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			
+			.top .login div {
+				float: left;
+				font-size: 12px;
+				margin-left: 43px;
+			}
+			
+			#login {
+				color: #06C
+			}
+			
+			#login:hover {
+				color: #F00
+			}
+			
+			.title {
+				width: 100%;
+				height: 30px;
+				background: #f7f7f7;
+				font-size: 12px;
+			}
+			
+			.box {
+				width: 218px;
+				overflow: hidden;
+				background: #354156;
+				float: left;
+			}
+			
+			.center {
+				width: 1200px;
+				overflow: hidden;
+				border: 1px solid #CCCCCC;
+				margin: 0 auto;
+				margin-top: 50px;
+			}
+			
+			.title li {
+				line-height: 20px;
+				float: left;
+			}
+			
+			.title li:nth-child(1) {
+				line-height: 30px;
+				margin-left: 90px;
+			}
+			
+			.title li:nth-child(2) {
+				margin-left: 1190px;
+				margin-top: -25px;
+			}
+			
+			.banner {
+				background: white;
+			}
+			
+			.wz {
+				font-size: 30px;
+				text-align: center;
+			}
+			
+			.user {
+				width: 218px;
+				height: 180px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.user img {
+				margin-left: 40px;
+				margin-top: 20px;
+			}
+			
+			.user font {
+				margin-left: 45px;
+				margin-top: 5px;
+			}
+			
+			.box_1 {
+				width: 218px;
+				height: 60px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.box_0 {
+				width: 218px;
+				height: 60px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.box_1 a {
+				text-align: center;
+				line-height: 60px;
+				display: block;
+			}
+			
+			.box_0:hover .box_1 {
+				background: #52688f;
+			}
+			
+			.top_1 {
+				float: left;
+				display: block;
+				width: 982px;
+				height: 40px;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			.top_1 font {
+				line-height: 40px;
+				margin-left: 20px;
+			}
+			
+			.top_1 img {
+				float: right;
+				margin-top: 2px;
+			}
+			
+			.hot {
+				float: left;
+				width: 982px;
+				height: 140px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			
+			.hot_1 {
+				width: 152px;
+				height: 140px;
+				border-right: 1px solid #CCCCCC;
+				float: left;
+			}
+			
+			.tb {
+				width: 276px;
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.tb img {
+				width: 276px;
+				height: 140px;
+			}
+			
+			.new {
+				width: 982px;
+				height: 600px;
+				margin-top: 140px;
+		
+			}
+			
+			.new_0 {
+				width: 832px;
+				height: 600px;
+				
+				margin-left: 80px;
+				overflow: hidden;
+			}
+			
+			.new_1 {
+				width: 158px;
+				height: 224px;
+				border: 3px solid #CCCCCC;
+				float: left;
+				margin-left: 40px;
+				margin-top: 20px;
+				overflow: hidden;
+			}
+			.new_1 img
+			{	
+				width:100%;
+				height:180px;
+			}
+			.new_1 input {
+				width: 50px;
+				height: 30px;
+				background: white;
+				color: black;
+				border-radius: 5px;
+				float:left;
+			}
+			.tanchu {
+				width: 770px;
+				height: 480px;
+				border: 3px solid #44423d;
+				left:50%;
+				top:50%;
+				margin-left: -260px;
+				margin-top:-220px;
+				position: fixed;
+				z-index:1;
+				background-color: #b25616;
+			}
+			
+			.tanchu_1 {
+				width: 230px;
+				height: 300px;
+				position: absolute;
+				top: 30px;
+				left: 30px;
+			}
+			
+			.tanchu_2 {
+				width: 400px;
+				height: 300px;
+				margin: auto;
+				position: absolute;
+				top: 50px;
+				left: 330px;
+			}
+			
+			.tanchu_2 ul {
+				margin-top: 20px;
+				margin-left: 20px;
+			}
+			
+			.tanchu_2 ul li {
+				margin-top: 20px;
+			}
+			
+			.tanchu img {
+				width: 230px;
+				height: 300px;
+				border: 4px solid #CCCCCC;
+			}
+			
+			.tanchu_2 p {}
+			.tanchu_3{
+				position: absolute;
+				bottom: 20px;
+				left: 350px;
+			}
+			.tanchu_3 input{width: 100px;height: 40px;margin-left: 10px;}
+			
+			/*.fenye {
+				width: 500px;
+				height: 30px;
+				background: yellow;
+				float: left;
+				margin-left:200px;
+			}
+			
+			.fenye table {
+				border: 2px solid red;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+			<!--登录-->
+			<div class="login">
+				<div>您好！欢迎来到皮皮虾影院！
+					<a href="#" id="login">请登录</a>
+					<a href="#">立即注册</a>
+				</div>
+				<span><img src="images/tel_icon.jpg" width="16" height="16" />免费咨询：400-000-0000</span> </div>
+
+		</div>
+		</div>
+		<div class="wz">
+			欢迎使用皮皮虾影院管理系统
+		</div>
+		<div class="tanchu" id="tanchu" style="display:none">
+				<div class="tanchu_1">
+					<input type="file" id="file">
+				</div>
+				<div class="tanchu_2">
+					<ul>
+						<li>影片类型:<input type="text" id="type"></li>
+						<li>影片语种:<input type="text" id="lang"></li>
+						<li>影片名称:<input type="text" id="name"></li>
+						<li>影片时长:<input type="text" id="length"></li>
+						<li>影片价格:<input type="text" id="price"></li>
+						<li>影片介绍:<input type="text" id="introduction"></li>
+						<li>影片状态:<input type="text" id="status"></li>
+					</ul>
+					<p></p>
+				</div>
+				<div class="tanchu_3">
+					<input type="submit" value="确认增加" onclick="p2()">
+					<input type="submit" value="取消" onclick="p3()">
+				</div>
+			</div>
+			<div class="tanchu" id="tanchu1" style="display:none">
+				<div class="tanchu_1">
+					<input type="text"id="text1" style="display:none">
+					<input type="file" id="file1">
+				</div>
+				<div class="tanchu_2">
+					<ul>
+						<li>影片类型:<input type="text" id="type1"></li>
+						<li>影片语种:<input type="text" id="lang1"></li>
+						<li>影片名称:<input type="text" id="name1"></li>
+						<li>影片时长:<input type="text" id="length1"></li>
+						<li>影片价格:<input type="text" id="price1"></li>
+						<li>影片介绍:<input type="text" id="introduction1"></li>
+						<li>影片状态:<input type="text" id="status1"></li>
+					</ul>
+					<p></p>
+				</div>
+				<div class="tanchu_3">
+					<input type="submit" value="确认修改" onclick="p6()">
+					<input type="submit" value="取消" onclick="p7()">
+				</div>
+			</div>
+		<div class="center">
+			<div class="box">
+				<div class="user">
+					<img src="images/14.jpg"><br/>
+					<font color="white">管理员:小萝莉</font>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="administrator.html">个人首页</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="影片管理.html">影片管理</a>
+						</font>
+					</div>
+				</div>
+
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="票务管理.html">票务管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="座位管理.html">座位管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="影厅管理.html">影厅管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="演出计划.html">演出计划</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="用户管理.html">用户管理</a>
+						</font>
+					</div>
+				</div>
+			
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="login.html">退出系统</a>
+						</font>
+					</div>
+				</div>
+
+			</div>
+			<div class="top_1">
+				<font>皮皮虾影院</font>
+				<img src="images/15.jpg">
+			</div>
+			<div class="hot">
+				<div class="hot_1">
+					<img src="images/16.jpg">
+				</div>
+
+				<div class="new">
+					<div class="new_0" id="new">
+						<div class="new_1">
+							<img  src="kb.jpg">
+							<input type="submit" value="增加" onclick="p4()">
+							<input type="submit" value="删除" onclick="p1('a1')" id="a1">
+							<input type="submit" value="修改"onclick="p5('a1')">
+						
+						</div>
+
+						<div class="new_1">
+							<img src="kb.jpg">
+							<input type="submit" value="增加"onclick="p4()">
+							<input type="submit" value="删除"id="a2"onclick="p1('a2')">
+							<input type="submit" value="修改"onclick="p5('a2')">
+
+						</div>
+
+						<div class="new_1">
+							<img  src="kb.jpg">
+							<input type="submit" value="增加"onclick="p4()">
+							<input type="submit" value="删除"id="a3"onclick="p1('a3')">
+							<input type="submit" value="修改"onclick="p5('a3')">
+						</div>
+
+						<div class="new_1">
+							<img  src="kb.jpg">
+							<input type="submit" value="增加"onclick="p4()">
+							<input type="submit" value="删除"id="a4"onclick="p1('a4')">
+							<input type="submit" value="修改"onclick="p5('a4')">
+
+						</div>
+						<div class="new_1">
+							<img  src="kb.jpg">
+							<input type="submit" value="增加"onclick="p4()">
+							<input type="submit" value="删除"id="a5"onclick="p1('a5')">
+							<input type="submit" value="修改"onclick="p5('a5')">
+						</div>
+
+						<div class="new_1">
+							<img src="kb.jpg">
+							<input type="submit" value="增加"onclick="p4()">
+							<input type="submit" value="删除"id="a6"onclick="p1('a6')">
+							<input type="submit" value="修改"onclick="p5('a6')">
+						</div>
+
+						<div class="new_1">
+							<img src="kb.jpg">
+							<input type="submit" value="增加"onclick="p4()">
+							<input type="submit" value="删除"id="a7"onclick="p1('a7')">
+							<input type="submit" value="修改"onclick="p5('a7')">
+						</div>
+
+						<div class="new_1">
+							<img  src="kb.jpg">
+							<input type="submit" value="增加"onclick="p4()">
+							<input type="submit" value="删除"id="a8"onclick="p1('a8')">
+							<input type="submit" value="修改"onclick="p1('a8')">
+
+						</div>
+						<!--<div class="fenye">
+							
+							<table border="1">
+								<tr>
+									<td>sss</td>
+									<td>ss</td>
+									<td>s</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>-->
+					</div>
+
+				</div>
+			</div>
+		<script type="text/javascript">
+		window.onload=function()
+		{
+			$.ajax
+			({
+			url:"http://localhost:666/film/querys?",
+			type:'get',
+			dataType:'jsonp',
+			success:function(data){
+				var s=document.getElementById("new").getElementsByTagName("img");
+				for(var i=0;i<8;i++)
+				{
+					s[i].src="image/"+data.Detail[i].play_image;
+					s[i].id=data.Detail[i].play_id;
+				}
+			},
+			});
+		}
+		function p1(id)
+		{
+			var s=document.getElementById("new").getElementsByTagName("img");
+			var t;
+			switch(id)
+			{
+				case 'a1':t=s[0].id;break;
+				case 'a2':t=s[1].id;break;
+				case 'a3':t=s[2].id;break;
+				case 'a4':t=s[3].id;break;
+				case 'a5':t=s[4].id;break;
+				case 'a6':t=s[5].id;break;
+				case 'a7':t=s[6].id;break;
+				case 'a8':t=s[7].id;break;
+				default:break;
+			}
+			$.ajax
+			({
+			url:"http://localhost:666/film/deletes?play_id="+t,
+			type:'get',
+			dataType:'jsonp',
+			success:function(data){
+					var s2=document.getElementById("new").getElementsByTagName("img");
+					for(var i=0;i<8;i++)
+					{
+						s2[i].src="image/"+data.Detail[i].play_image;
+						s2[i].id=data.Detail[i].play_id;
+					}
+					window.location.href="影片管理.html";
+				},
+			});
+		}
+		function p2()
+		{
+			var tanchu=document.getElementById("tanchu");
+			var a1=document.getElementById("type").value;
+			var a2=document.getElementById("lang").value;
+			var a3=document.getElementById("name").value;
+			var a4=document.getElementById("length").value;
+			var a5=document.getElementById("price").value;
+			var a6=document.getElementById("introduction").value;
+			var a7=document.getElementById("file").value.slice(12);
+			var a8=document.getElementById("status").value;
+			$.ajax
+			({
+			url:"http://localhost:666/film/addFilm?play_type_id="+a1+"&play_lang_id="+a2+"&play_name="+a3+"&play_introduction="+a6+"&play_image="+a7+"&play_length="+a4+"&play_ticket_price="+a5+"&play_status="+a8,
+			type:'get',
+			dataType:'jsonp',
+			success:function(data){
+					tanchu.style.display="none";
+				},
+			});
+		}
+		function p3()
+		{
+			var tanchu=document.getElementById("tanchu");
+			tanchu.style.display="none";
+		}
+		function p4()
+		{
+			var tanchu=document.getElementById("tanchu");
+			tanchu.style.display="block";
+		}
+		function p5(id)
+		{
+			var s=document.getElementById("new").getElementsByTagName("img");
+			var t;
+			switch(id)
+			{
+				case 'a1':t=s[0].id;break;
+				case 'a2':t=s[1].id;break;
+				case 'a3':t=s[2].id;break;
+				case 'a4':t=s[3].id;break;
+				case 'a5':t=s[4].id;break;
+				case 'a6':t=s[5].id;break;
+				case 'a7':t=s[6].id;break;
+				case 'a8':t=s[7].id;break;
+				default:break;
+			}
+			$.ajax
+			({
+			url:"http://localhost:666/film/querys?play_id="+t,
+			type:'get',
+			dataType:'jsonp',
+			success:function(data){
+			var a1=document.getElementById("type1");
+			var a2=document.getElementById("lang1");
+			var a3=document.getElementById("name1");
+			var a4=document.getElementById("length1");
+			var a5=document.getElementById("price1");
+			var a6=document.getElementById("introduction1");
+			var a8=document.getElementById("status1");
+			var a9=document.getElementById("text1")
+			a1.value=data.Detail[0].play_type_id;
+			a2.value=data.Detail[0].play_lang_id;
+			a3.value=data.Detail[0].play_name;
+			a4.value=data.Detail[0].play_length;
+			a5.value=data.Detail[0].play_ticket_price;
+			a6.value=data.Detail[0].play_introduction;
+			a8.value=data.Detail[0].play_status;
+			a9.value=t;
+			var tanchu=document.getElementById("tanchu1");
+			tanchu.style.display="block";
+				},
+			});
+		}
+		function p6()
+		{
+			var tanchu=document.getElementById("tanchu1");
+			var a1=document.getElementById("type1").value;
+			var a2=document.getElementById("lang1").value;
+			var a3=document.getElementById("name1").value;
+			var a4=document.getElementById("length1").value;
+			var a5=document.getElementById("price1").value;
+			var a6=document.getElementById("introduction1").value;
+			var a7=document.getElementById("file1").value.slice(12);
+			var a8=document.getElementById("status1").value;
+			var a9=document.getElementById("text1").value;
+			$.ajax
+			({
+			url:"http://localhost:666/film/update?play_id="+a9+"&play_type_id="+a1+"&play_lang_id="+a2+"&play_name="+a3+"&play_introduction="+a6+"&play_image="+a7+"&play_length="+a4+"&play_ticket_price="+a5+"&play_status="+a8,
+			type:'get',
+			dataType:'jsonp',
+			success:function(data){
+					tanchu.style.display="none";
+					window.location.href="影片管理.html";
+				},
+			});
+		}
+		function p7()
+		{
+			var tanchu=document.getElementById("tanchu1");
+			tanchu.style.display="none";
+		}
+	</script>
+	</body>
+</html>

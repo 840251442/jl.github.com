@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				width: 100%;
+			}
+			
+			li {
+				list-style: none
+			}
+			
+			a {
+				text-decoration: none;
+				color: white;
+			}
+			
+			a:hover {
+				color: deepskyblue;
+			}
+			
+			.top {
+				width: 100%;
+				overflow: hidden;
+				padding-bottom: 25px;
+			}
+			/*头部登录区域*/
+			
+			.top .login {
+				width: 100%;
+				background: #f7f7f7;
+				height: 30px;
+				line-height: 30px;
+				color: #6d6d6d;
+				border-bottom: 1px solid #e8e8e8;
+			}
+			
+			.top .login span {
+				float: right;
+				font-size: 14px;
+				font-weight: bold;
+				margin-right: 33px;
+			}
+			
+			.top .login span img {
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			
+			.top .login div {
+				float: left;
+				font-size: 12px;
+				margin-left: 43px;
+			}
+			
+			#login {
+				color: #06C
+			}
+			
+			#login:hover {
+				color: #F00
+			}
+			
+			.title {
+				width: 100%;
+				height: 30px;
+				background: #f7f7f7;
+				font-size: 12px;
+			}
+			
+			.box {
+				width: 218px;
+				overflow: hidden;
+				background: #354156;
+				float: left;
+			}
+			
+			.center {
+				width: 1200px;
+				overflow: hidden;
+				border: 1px solid #CCCCCC;
+				margin: 0 auto;
+				margin-top: 50px;
+			}
+			
+			.title li {
+				line-height: 20px;
+				float: left;
+			}
+			
+			.title li:nth-child(1) {
+				line-height: 30px;
+				margin-left: 90px;
+			}
+			
+			.title li:nth-child(2) {
+				margin-left: 1190px;
+				margin-top: -25px;
+			}
+			
+			.banner {
+				background: white;
+			}
+			
+			.wz {
+				font-size: 30px;
+				text-align: center;
+			}
+			
+			.user {
+				width: 218px;
+				height: 180px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.user img {
+				margin-left: 40px;
+				margin-top: 20px;
+			}
+			
+			.user font {
+				margin-left: 45px;
+				margin-top: 5px;
+			}
+			
+			.box_1 {
+				width: 218px;
+				height: 60px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.box_0 {
+				width: 218px;
+				height: 60px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.box_1 a {
+				text-align: center;
+				line-height: 60px;
+				display: block;
+			}
+			
+			.box_0:hover .box_1 {
+				background: #52688f;
+			}
+			
+			.top_1 {
+				float: left;
+				display: block;
+				width: 982px;
+				height: 40px;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			.top_1 font {
+				line-height: 40px;
+				margin-left: 20px;
+			}
+			
+			.top_1 img {
+				float: right;
+				margin-top: 2px;
+			}
+			
+			.hot {
+				float: left;
+				width: 982px;
+				height: 140px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			
+			.hot_1 {
+				width: 152px;
+				height: 140px;
+				border-right: 1px solid #CCCCCC;
+				float: left;
+			}
+			
+			.tb {
+				width: 276px;
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.tb img {
+				width: 276px;
+				height: 140px;
+			}
+			
+			.new_1 {
+				width: 260px;
+				height: 390px;
+				border: 4px solid #CCCCCC;
+				float: left;
+				margin-left: -120px;
+				margin-top: 220px;
+			}
+			.new_1 img{margin-left: 35px;}
+			.new_1 ul{margin-top: -10px;}
+			.new_1 ul li{margin-top: 10px;margin-left: 30px;}
+			.new_1 ul li a{color: black;}
+			.new_1 ul li a:hover{color: deepskyblue;}
+			
+			
+			
+			.new_2 {
+				width: 260px;
+				height: 390px;
+				border: 4px solid #CCCCCC;
+				float: left;
+				margin-left: 65px;
+				margin-top: 220px;
+			}
+			.new_2 img{margin-left: 35px;margin-top: 28px;}
+			
+			.new_2 ul{margin-top: 31px;}
+			.new_2 ul li{margin-top: -20px;margin-left: 30px;}
+			.new_2 ul li a{color: black;}
+			.new_2 ul li a:hover{color: deepskyblue;}
+			.new_3 {
+				width: 260px;
+				height: 390px;
+				border: 4px solid #CCCCCC;
+				float: left;
+				margin-left: 60px;
+				margin-top: 220px;
+			}
+			.new_3 img{ margin-left: 48px;margin-top: 24px;}
+			.new_3 ul{margin-top: 39px;}
+			.new_3 ul li{margin-top: -19px;margin-left: 30px;}
+			.new_3 ul li a{color: black;}
+			.new_3 ul li a:hover{color: deepskyblue;}
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+			<!--登录-->
+			<div class="login">
+				<div>您好！欢迎来到皮皮虾影院！
+					<a href="#" id="login">请登录</a>
+					<a href="#">立即注册</a>
+				</div>
+				<span><img src="images/tel_icon.jpg" width="16" height="16" />免费咨询：400-000-0000</span> </div>
+
+		</div>
+		</div>
+		<div class="wz">
+			欢迎使用皮皮虾影院管理系统
+		</div>
+
+		<div class="center">
+			<div class="box">
+				<div class="user">
+					<img src="images/14.jpg" ><br/>
+					<font color="white">管理员:小萝莉</font>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="administrator.html">个人首页</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="影片管理.html">影片管理</a>
+						</font>
+					</div>
+				</div>
+
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="票务管理.html">票务管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="座位管理.html">座位管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="影厅管理.html">影厅管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="演出计划.html">演出计划</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="用户管理.html">用户管理</a>
+						</font>
+					</div>
+				</div>
+			
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="login.html">退出系统</a>
+						</font>
+					</div>
+				</div>
+
+			</div>
+			<div class="top_1">
+				<font>皮皮虾影院</font>
+				<img src="images/15.jpg">
+			</div>
+			<div class="hot">
+				<div class="hot_1">
+					<img src="images/16.jpg">
+				</div>
+				
+
+				<div class="new_1">
+					<img src="images/17.jpg">
+					<ul>
+						<li><a href=""><img src="images/21.jpg">&nbsp;个人信息</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;考勤记录</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;工资信息</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;业务信息</a></li>
+					</ul>
+				</div>
+				<div class="new_2">
+					<img src="images/18.jpg">
+					<ul>
+						<li><a href=""><img src="images/21.jpg">&nbsp;今日收益</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;本月收益</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;热映影片</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;业务信息</a></li>
+					</ul>
+				</div>
+				<div class="new_3">
+					<img src="images/19.jpg">
+					<ul>
+						<li><a href=""><img src="images/21.jpg">&nbsp;用户来信</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;意见反馈</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;员工信息反馈</a></li>
+						<li><a href=""><img src="images/21.jpg">&nbsp;业务联系</a></li>
+					</ul>
+				</div>
+
+	</body>
+
+</html>

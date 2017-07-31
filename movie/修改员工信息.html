@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>增加</title>
+		<script src="jquery-2.2.2.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			body {
+				width: 100%;
+		
+				background: url(images/22.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			.zhuce {
+				width: 800px;
+				height: 500px;
+				background: white;
+				margin-top: 100px;
+				margin: 100px auto;
+				opacity: 1;
+				text-align: center;
+			}
+			
+			.a input {
+				width: 250px;
+				height: 20px;
+				padding-left: 10px;
+				margin-right: 110px;
+				margin-top: 40px;
+				float: right;
+			}
+			
+			.zhuce span:first-child {
+				position: absolute;
+				left: 75px;
+				top: 40px;
+				display: block;
+			}
+			
+			.name {
+				position: absolute;
+				left: 75px;
+				margin-top: 85px;
+			}
+			
+			.youxiang {
+				position: absolute;
+				left: 75px;
+				margin-top: 225px;
+			}
+			.tel {
+				position: absolute;
+				left: 75px;
+				margin-top: 135px;
+			}
+			.a1{
+				position: absolute;
+				left: 75px;
+				margin-top: 180px;
+			}
+				#flag
+			{
+				position: absolute;
+				left:390px;
+				top:40px;
+			}
+			#flag1
+			{
+				position:absolute;
+				left:390px;
+				top:110px;
+			}
+			#flag2
+			{
+				position:absolute;
+				left:390px;
+				top:168px;
+			}
+			#flag3
+			{
+				position:absolute;
+				left:390px;
+				top:233px;
+			}
+			#flag4
+			{
+				position:absolute;
+				left:390px;
+				top:300px;
+			}
+		
+			
+			.a {
+				width: 500px;
+				height: 500px;
+				
+				margin: 0 auto;
+				margin-top: 40px;
+				position: relative;
+			}
+			.zhuce font{display: block;position: relative;top: 40px;}
+			.box_0  {position :absolute;width: 80px;height: 30px; left:550px;bottom:150px;}
+			.box_1  {position :absolute;width: 80px;height: 30px; left:700px;bottom:150px;}
+			.box_0:hover{background: #5bf3ea;}
+			.box_1:hover{background: #5bf3ea;}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="zhuce">
+			<div class="a">
+				<span>编号:</span><input type="text"  id="no1"placeholder="请输入员工编号"onclick="check5()"><span id="flag" style="color:red"/></span>
+				<br>
+				<span class="name">名字:</span><input type="text"id="name1" placeholder="请输入员工名字"onclick="check6()">
+				<span id="flag1" style="color:red"></span>
+				<br>
+				<span class="tel">电话:</span><input type="text" id="tel1"placeholder="请输入员工电话"onclick="check7()">
+				<span id="flag2" style="color:red"></span>
+				<br>
+				<span class="a1">地址:</span><input type="text"id="add1" placeholder="请输入员工地址"onclick="check8()">
+				<span id="flag3" style="color:red"></span>
+				<br>
+				<span class="youxiang">邮箱:</span><input type="text"id="email1" placeholder="请输入员工邮箱"onclick="check9()"><span id="flag4" style="color:red"></span>
+				<br>
+			</div>
+			<input type="submit"value="确认修改"class="box_0"onclick="c1()">
+			<input type="submit"value="上一页" class="box_1" onclick="a1()">
+		</div>
+	</body>
+	<script type="text/javascript">
+		var c;
+		window.onload=function()
+		{
+			var a=document.URL.match(/\b[a-zA-Z]*\b=[^&]*/g);
+			var b=a[0].split('=');
+			c=a[1].split('=');
+			console.log(c[1]);
+			var d=document.getElementById("no1");
+			d.value=b[1];
+		}
+		    function a1()
+	     {
+	     	window.location.href="用户管理.html";
+	     }
+	function check5() {
+	var s = /^[0-9a-zA-Z]{3,10}$/
+	var s1 = document.getElementById("no1").value;
+	if (s.test(s1)) {
+		flag = true;
+		document.getElementById("flag").innerText = "格式正确";
+		return flag;
+	} else {
+		document.getElementById("flag").innerText = "格式错误";
+		return flag;
+	}
+}	
+function check7() {
+	var s = /^[1][3-8][0-9]{9}$/;
+	var s1 = document.getElementById("tel1").value;
+	if (s.test(s1)) {
+		flag2 = true;
+		document.getElementById("flag2").innerText = "格式正确";
+		return flag2;
+		} else {
+		document.getElementById("flag2").innerText = "格式错误";
+		return flag2;
+	}
+
+}
+function check9() {
+	var s = /^([0-9a-zA-Z_-])+@[0-9A-Za-z_-]+(\.([a-z]{2,3}){1,3})$/;
+	var s1 = document.getElementById("email1").value;
+	if (s.test(s1))  {
+		flag4 = true;
+		document.getElementById("flag4").innerText = "格式正确";
+		return flag4;
+		} else {
+		document.getElementById("flag4").innerText = "格式错误";
+		return flag4;
+	}
+}
+function check6() {
+	var s = /^[\u4e00-\u9fa5]{2,10}$/;
+	var s1 = document.getElementById("name1").value;
+	if (s.test(s1)) {
+		flag1 = true;
+		document.getElementById("flag1").innerText = "格式正确";
+		return flag1;
+	} else {
+		flag1 = false;
+		document.getElementById("flag1").innerText = "格式错误";
+		return flag1;
+	}
+}
+function check8() {
+	var s = /^.{2,30}$/
+	var s1 = document.getElementById("add1").value;
+	if (s.test(s1)) {
+		flag3 = true;
+		document.getElementById("flag3").innerText = "格式正确";
+		return flag3;
+	} else {
+		flag3 = false;
+		document.getElementById("flag3").innerText = "格式错误";
+		return flag3;
+	}
+}
+function c1() {
+	var result = check5();
+	var result1 = check6();
+	var result2 = check7();
+	var result3 = check8();
+	var result4 = check9();
+	console.log(result);
+	console.log(result1);
+	console.log(result2);
+	console.log(result3);
+	console.log(result4);
+	if ((result == true) && (result1 == true) && (result2 == true)
+			&& (result3 == true) && (result4 == true)) {
+				var a1=document.getElementById("no1").value;
+				var a2=document.getElementById("name1").value;
+				var a3=document.getElementById("tel1").value;
+				var a4=document.getElementById("add1").value;
+				var a5=document.getElementById("email1").value;
+				$.ajax
+				({
+				url:"http://localhost:666/user/updateUser?emp_id="+c[1]+"&emp_no="+a1+"&emp_name="+a2+"&emp_tel="+a3+"&emp_add="+a4+"&emp_email="+a5,
+
+				type:'get',
+				dataType:'jsonp',
+				success:function(data){
+					if(data.Detail.status==1)
+					{
+						window.location.href="用户管理.html";
+					}
+				},
+				});
+	} 
+}
+	</script>
+</html>

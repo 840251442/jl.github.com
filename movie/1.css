@@ -1,0 +1,109 @@
+		@charset "utf-8";
+			* {
+				margin: 0;
+				padding: 0
+			}
+			
+			li {
+				list-style-type: none;
+			}
+			
+			a {
+				color: white;
+				text-decoration: none;
+			}
+			
+			body {
+				background: url(images/3.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				width: 100%;
+				height:768px;
+				overflow: hidden;
+			}
+			/*登录*/
+			
+			
+			.login_box_neirong {
+				width: 310px;
+				height: 324px;
+				background: #fff;
+				float: right;
+				margin-top: 125px;
+				padding: 18px;
+				border-radius: 10px;
+				opacity: 0.8;
+			}
+			
+			.login_box_neirong span {
+				float: left;
+				font-size: 20px;
+				font-weight: bold;
+			}
+			
+			.login_box_neirong  a {
+				float: right;
+				font-size: 12px;
+				color: #0c9cf3
+			}
+			
+			.login_box_neirong  table {
+				width: 100%;
+			}
+			
+			.login_box_neirong  table td {
+				padding-top: 40px;
+			}
+			
+			.login_box_neirong  table td img:not(last-child) {
+				float: left;
+				border: 1px solid #ccc;
+			}
+			
+			.login_box_neirong table td input[type=text],
+			.login_box_neirong table td input[type=password] {
+				width: 230px;
+				height: 38px;
+				border: 0;
+				border-bottom: 1px #ccc solid;
+				border-right: 1px #ccc solid;
+				border-top: 1px #ccc solid;
+			}
+			
+			.login_box {
+				width: 100%;
+			}
+			
+			.login_box_neirong input {
+				padding-left: 10px;
+			}
+			
+			.title {
+				width: 100%;
+				height: 80px;
+				min-width: 1600px;
+			}
+			
+			.title ul {
+				height:80px;
+				width: 600px;
+				float:right;
+				margin-right:200px;
+			}
+			
+	
+		
+			
+			.title li{
+				float: right;
+				margin-top: 40px;
+				margin-left: 60px;
+			}
+			.title img{margin-left:20px;}
+			a:hover {
+				color: cornflowerblue;
+			
+			.wz {
+					position: absolute;
+					right: 50px;
+				}

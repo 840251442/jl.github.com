@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户修改密码</title>
+		<script src="jquery-2.2.2.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			body {
+				width: 100%;
+				background: url(images/22.jpg);
+				background-size: cover;
+			}
+			
+			.zhuce {
+				width: 600px;
+				height: 630px;
+				background: white;
+				position: relative;
+				margin: auto;
+				text-align: center;
+			}
+			.pass{
+				position: absolute;
+				width: 220px;
+				height: 30px;
+				top:100px;
+				left:200px;
+			}
+			.pass_0{
+				position: absolute;
+				top: 280px;
+				width: 220px;
+				height: 30px;
+				left:200px;
+			}
+				.pass_1{
+				position: absolute;
+				width: 220px;
+				height: 30px;
+				top: 160px;
+				left:200px;
+			}
+				.pass_2{
+				position: absolute;
+				width: 220px;
+				height: 30px;
+				top: 220px;
+				left:200px;
+			}
+			.pass_4
+			{
+				position: absolute;
+				width: 220px;
+				height: 30px;
+				top: 350px;
+				left:200px;
+			}
+			.shangchuan
+			{
+				position: absolute;
+				left:160px;
+				top:350px;
+			}
+			.zhanghu
+			{
+				position: absolute;
+				left:130px;
+				top:110px;
+			}
+			.zhanghu_0
+			{
+				position: absolute;
+				left:140px;
+				top:170px;
+			}
+			.mima
+			{
+				position: absolute;
+				left:140px;
+				top:230px;
+			}
+			.queren
+			{
+				position: absolute;
+				left:110px;
+				top:290px;
+			}
+			#flag
+			{
+				position: absolute;
+				left:430px;
+				top:280px;
+			}
+			.box_0  {position :absolute;width: 80px;height: 30px; left:200px;bottom:200px;}
+			.box_1  {position :absolute;width: 80px;height: 30px; left:300px;bottom:200px;}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="zhuce">
+			
+				<span class="zhanghu">员工账户:</span><input type="text" id="no" placeholder="请输入6位密码" class="pass">
+				<br/>
+				<span class="zhanghu_0">原密码:</span><input type="password"id="mima" placeholder="请输入6位密码" class="pass_1">
+				<br/>
+				<span class="mima">新密码:</span><input type="password" id="mima1"placeholder="请输入6位新密码" class="pass_2">
+				<br>
+				<span class="queren">确认新密码:</span><input type="password" id="mima2"placeholder="确认新密码"class="pass_0"onblur="p()"><span id="flag" style="color:red"></span>
+				<br>
+				<span  class="shangchuan">头像:</span><input type="file" class="pass_4" id="file1">
+			<input type="submit" value="确认修改" class="box_0" onclick="c()">
+			&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value="取消修改" class="box_1"onclick="c1()">
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var flag=false;
+		function p()
+		{
+			var mima1=document.getElementById("mima1").value;
+			var mima2=document.getElementById("mima2").value;
+			if((mima1!=null)&&(mima2!=null)&&(mima1==mima2)&&(mima1!=""))
+			{
+				flag=true;
+				var a=document.getElementById("flag");
+				a.innerText="两次输入一致";
+				return flag;
+			}
+			var a=document.getElementById("flag");
+			a.innerText="两次密码输入不一致";
+			return flag;
+		}
+		function c()
+		{
+			var result=p();
+			var id=document.getElementById("no").value;
+			var id1=document.getElementById("mima").value;
+			var id2=document.getElementById("mima1").value;
+			var id3=document.getElementById("file1").value.slice(12);
+			console.log("http://localhost:666/user/query?emp_no="+id+"&mima="+id1+"&mima1="+id2);
+			if(result==true)
+			{
+				$.ajax
+				({
+					url:"http://localhost:666/user/query?emp_no="+id+"&mima="+id1+"&mima1="+id2+"&emp_head="+id3,
+					type:'get',
+					dataType:'jsonp',
+					success:function(data){
+								if(data.Detail.status==true)
+								{
+									window.location.href="login.html";
+								}
+								else
+								{
+									alert("账户不存在或者密码错误");
+								}
+							},
+				})
+			}
+		}
+		function c1()
+		{
+			window.location.href="login.html";
+		}
+
+	</script>
+
+</html>

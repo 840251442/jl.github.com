@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>增加</title>
+		<script src="jquery-2.2.2.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			body {
+				width: 100%;
+		
+				background: url(images/22.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			.zhuce {
+				width: 800px;
+				height: 500px;
+				background: white;
+				margin-top: 100px;
+				margin: 100px auto;
+				opacity: 1;
+				text-align: center;
+			}
+			
+			.a input {
+				width: 250px;
+				height: 20px;
+				padding-left: 10px;
+				margin-right: 110px;
+				margin-top: 40px;
+				float: right;
+			}
+			
+			.zhuce span:first-child {
+				position: absolute;
+				left: 35px;
+				top: 40px;
+				display: block;
+			}
+			
+			.name {
+				position: absolute;
+				left: 55px;
+				margin-top: 85px;
+			}
+			
+			.youxiang {
+				position: absolute;
+				left: 25px;
+				margin-top: 225px;
+			}
+			.tel {
+				position: absolute;
+				left: 5px;
+				margin-top: 85px;
+			}
+			.a1{
+				position: absolute;
+				left: 75px;
+				margin-top: 190px;
+			}
+		
+			
+			.a {
+				width: 500px;
+				height: 500px;
+				
+				margin: 0 auto;
+				margin-top: 40px;
+				position: relative;
+			}
+			#flag
+			{
+				position: absolute;
+				left:390px;
+				top:40px;
+			}
+			
+		
+			#flag3
+			{
+				position:absolute;
+				left:390px;
+				top:225px;
+			}
+		
+			.select
+			{
+				width: 265px;
+				height: 20px;
+				padding-left: 10px;
+				margin-right: 110px;
+				margin-top: 40px;
+				float: right;
+			}
+			.zhuce font{display: block;position: relative;top: 40px;}
+			.box_0  {position :absolute;width: 80px;height: 30px; left:550px;bottom:150px;}
+			.box_1  {position :absolute;width: 80px;height: 30px; left:700px;bottom:150px;}
+			.box_0:hover{background: #5bf3ea;}
+			.box_1:hover{background: #5bf3ea;}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="zhuce">
+			<div class="a">
+				<span  >演出厅id:</span>
+				<select class="select" id="no">
+				</select>
+				<br>
+				<span class="name" >影片id:</span>
+				<select class="select" id="no1">
+				<br>
+				<input id="tel" type="datetime-local" value="2016-06-09"/>
+				<br>
+				<span class="a1">价格:</span><input type="text" id="add"placeholder="请输入价格" onblur="check3()"><div id="flag3" style="color:red"></div>
+				<br>
+			</div>
+			<input type="submit"value="确认增加"class="box_0"onclick="c()">
+			<input type="submit"value="上一页" class="box_1" onclick="a1()">
+		</div>
+	</body>
+	<script type="text/javascript">
+		var flag3=false;
+		 window.onload=function()
+		 {
+		 		$.ajax
+				({
+				url:"http://localhost:666/studio/query?",
+				type:'get',
+				dataType:'jsonp',
+				success:function(data){
+						var s1=document.getElementById("no");
+						for(var i=0;i<data.Detail.length;i++)
+						{	
+							var s3=document.createElement('option');
+							var s2=document.createTextNode(data.Detail[i].studio_id);
+							s3.appendChild(s2);
+							s1.appendChild(s3);
+						}
+				},
+				});
+				$.ajax
+				({
+				url:"http://localhost:666/film/querys?",
+				type:'get',
+				dataType:'jsonp',
+				success:function(data){
+						var s1=document.getElementById("no1");
+						for(var i=0;i<data.Detail.length;i++)
+						{	
+							var s3=document.createElement('option');
+							var s2=document.createTextNode(data.Detail[i].play_id);
+							s3.appendChild(s2);
+							s1.appendChild(s3);
+						}
+				},
+				});
+		 }
+	     function a1()
+	     {
+	     	window.location.href="演出计划.html";
+	     }
+
+
+function check3() {
+	var s = /^[0-9]{1,2}$/;
+	var s1 = document.getElementById("add").value;
+	if (s.test(s1)) {
+		flag3 = true;
+		document.getElementById("flag3").innerText = "格式正确";
+		return flag3;
+	} else {
+		flag3 = false;
+		document.getElementById("flag3").innerText = "格式错误";
+		return flag3;
+	}
+}
+function c() {
+	var result3 = check3();
+	if (result3 == true)
+	 {
+				var a1=document.getElementById("no").value;
+				var a2=document.getElementById("no1").value;
+				var a3=document.getElementById("tel").value;
+				var a4=document.getElementById("add").value;
+				$.ajax
+				({
+				url:"http://localhost:666/schedu/addschedu?studio_id="+a1+"&play_id="+a2+"&sched_time="+a3+"&sched_ticket_price="+a4,
+				type:'get',
+				dataType:'jsonp',
+				success:function(data){
+					if(data.Detail.status==1)
+					{
+						window.location.href="演出计划.html";
+					}
+				},
+				});
+	} 
+}
+	</script>
+</html>

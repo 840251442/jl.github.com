@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script src="jquery-2.2.2.min.js"></script>
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				width: 100%;
+			}
+			
+			li {
+				list-style: none
+			}
+			
+			a {
+				text-decoration: none;
+				color: white;
+			}
+			
+			a:hover {
+				color: deepskyblue;
+			}
+			
+			.top {
+				width: 100%;
+				overflow: hidden;
+				padding-bottom: 25px;
+			}
+			/*头部登录区域*/
+			
+			.top .login {
+				width: 100%;
+				background: #f7f7f7;
+				height: 30px;
+				line-height: 30px;
+				color: #6d6d6d;
+				border-bottom: 1px solid #e8e8e8;
+			}
+			
+			.top .login span {
+				float: right;
+				font-size: 14px;
+				font-weight: bold;
+				margin-right: 33px;
+			}
+			
+			.top .login span img {
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			
+			.top .login div {
+				float: left;
+				font-size: 12px;
+				margin-left: 43px;
+			}
+			
+			#login {
+				color: #06C
+			}
+			
+			#login:hover {
+				color: #F00
+			}
+			
+			.title {
+				width: 100%;
+				height: 30px;
+				background: #f7f7f7;
+				font-size: 12px;
+			}
+			
+			.box {
+				width: 218px;
+				overflow: hidden;
+				background: #354156;
+				float: left;
+			}
+			
+			.center {
+				width: 1200px;
+				overflow: hidden;
+				border: 1px solid #CCCCCC;
+				margin: 0 auto;
+				margin-top: 50px;
+			}
+			
+			.title li {
+				line-height: 20px;
+				float: left;
+			}
+			
+			.title li:nth-child(1) {
+				line-height: 30px;
+				margin-left: 90px;
+			}
+			
+			.title li:nth-child(2) {
+				margin-left: 1190px;
+				margin-top: -25px;
+			}
+			
+			.banner {
+				background: white;
+			}
+			
+			.wz {
+				font-size: 30px;
+				text-align: center;
+			}
+			
+			.user {
+				width: 218px;
+				height: 180px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.user img {
+				margin-left: 40px;
+				margin-top: 20px;
+			}
+			
+			.user font {
+				margin-left: 45px;
+				margin-top: 5px;
+			}
+			
+			.box_1 {
+				width: 218px;
+				height: 60px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.box_0 {
+				width: 218px;
+				height: 60px;
+				border-bottom: 1px solid #424f6f;
+			}
+			
+			.box_1 a {
+				text-align: center;
+				line-height: 60px;
+				display: block;
+			}
+			
+			.box_0:hover .box_1 {
+				background: #52688f;
+			}
+			
+			.top_1 {
+				float: left;
+				display: block;
+				width: 982px;
+				height: 40px;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			.top_1 font {
+				line-height: 40px;
+				margin-left: 20px;
+			}
+			
+			.top_1 img {
+				float: right;
+				margin-top: 2px;
+			}
+			
+			.hot {
+				float: left;
+				width: 982px;
+				height: 140px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			
+			.hot_1 {
+				width: 152px;
+				height: 140px;
+				border-right: 1px solid #CCCCCC;
+				float: left;
+			}
+			
+			.table1 {
+				width: 983px;
+				text-align: center;
+				margin-left: 218px;
+			}
+			
+			.table1 table {
+				width: 900px;
+				margin: 0 auto;
+				border-radius:12px ;
+			}
+			
+			.table1 table td {
+				font-size: 18px;
+				text-align: center;
+			}
+			
+			.table1 table td a {
+				color: black;
+			}
+			
+			.table1 table td a:hover {
+				color: white;
+				background: deepskyblue;
+			}
+			
+			.sosuo {
+				width: 300px;
+				height: 40px;
+				position: relative;
+				margin-top: 20px;
+				margin-left: 250px;
+				margin-bottom:20px;
+				border: 2px solid #CCCCCC;
+				border-radius: 5px;
+			}
+			
+			.sosuo_1 {
+				width: 150px;
+				height: 43px;
+				background: #cedbf2;
+				border-radius: 5px;
+			}
+			.seat
+			{
+    			  height:40px;
+    			  width:40px;
+   				  display:inline-block;
+                  margin-left:180px;
+			}
+				.seat_a
+			{
+    			font-size:15px;
+    			color:black;
+			}
+			.sosuo_1:hover{background: deepskyblue;}
+			.seat0
+			{
+				background-color:black;
+				width:40px;
+				height:40px;
+				border: 2px  black solid;
+			}
+			.seat1
+			{
+				background-color:#E3170D;
+				width:40px;
+				height:40px;
+				border: 2px  black solid;
+			}
+			.seat2
+			{
+				background-color:#808689;
+				width:40px;
+				height:40px;
+				border: 2px  black solid;
+			}
+			.button
+			{
+				width:70px;
+				height:20px;
+				margin-left:60px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+			<!--登录-->
+			<div class="login">
+				<div>您好！欢迎来到皮皮虾影院！
+					<a href="#" id="login">请登录</a>
+					<a href="#">立即注册</a>
+				</div>
+				<span><img src="images/tel_icon.jpg" width="16" height="16" />免费咨询：400-000-0000</span> </div>
+
+		</div>
+		</div>
+	
+
+		<div class="center">
+			<div class="box">
+				<div class="user">
+					<img src="images/14.jpg"><br/>
+					<font color="white">管理员:小萝莉</font>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="administrator.html">个人首页</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="影片管理.html">影片管理</a>
+						</font>
+					</div>
+				</div>
+
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="票务管理.html">票务管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="座位管理.html">座位管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="影厅管理.html">影厅管理</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="演出计划.html">演出计划</a>
+						</font>
+					</div>
+				</div>
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="用户管理.html">用户管理</a>
+						</font>
+					</div>
+				</div>
+			
+				<div class="box_0">
+					<div class="box_1">
+						<font color="white" size="5">
+							<a href="login.html">退出系统</a>
+						</font>
+					</div>
+				</div>
+
+			</div>
+			<div class="table1" id="table2">
+                <img  src="images/z0.jpg">
+            
+         <label class="seat_a">坏的</label>
+         <img  src="images/z2.jpg">
+                <label class="seat_a">无座</label>
+                <img  src="images/z1.jpg">
+
+                 <label class="seat_a">好的</label>
+				<table border="0" bordercolor="#4b5b77" id="table1">		
+				</table>
+			</div>
+			</div>
+	<script type="text/javascript">
+			var b;
+			var c;
+			var d;
+			window.onload=function ()
+			{
+				var a=document.URL.match(/\b[a-zA-Z]*\b=[^&]*/g);
+				b=a[0].split('=');
+				c=a[1].split('=');
+				d=a[2].split('=');
+				var table1=document.getElementById("table1");
+				var table2=document.getElementById("table2");
+				$.ajax
+				({
+					url:"http://localhost:666/studio/query?studio_id="+b[1],
+					type:'get',
+					dataType:'jsonp',
+					success:function(data){
+								for(var i=1;i<=c[1];i++)
+								{
+									var tr=document.createElement('tr');
+									for(var j=1;j<=d[1];j++)
+									{
+										var td=document.createElement('td');
+										var img=document.createElement('img');
+										if(data.Detail[(i-1)*d[1]+j-1].seat_status==1)
+										{
+											img.src="images/z1.jpg";
+											img.id=data.Detail[(i-1)*d[1]+j-1].seat_id;
+											img.onclick=(function(id){
+								
+											return function(){
+												p3(id);
+											}
+											})(data.Detail[(i-1)*d[1]+j-1].seat_id);
+										}
+										else if (data.Detail[(i-1)*d[1]+j-1].seat_status==0)
+										{
+											img.src="images/z0.jpg";
+											img.id=data.Detail[(i-1)*d[1]+j-1].seat_id;
+											td.onclick=(function(id){
+								
+											return function(){
+												p5(id);
+											}
+											})(data.Detail[(i-1)*d[1]+j-1].seat_id);
+										}
+										else
+										{
+											img.src="images/z2.jpg";
+											img.id=data.Detail[(i-1)*d[1]+j-1].seat_id;
+											td.onclick=(function(id){
+								
+											return function(){
+												p6(id);
+											}
+											})(data.Detail[(i-1)*d[1]+j-1].seat_id);
+										}
+										td.appendChild(img);
+										tr.appendChild(td);
+									}
+									table1.appendChild(tr);
+								}
+								var s=document.createElement('button');
+								var t=document.createTextNode("确认修改");
+								s.className="button";
+								s.onclick=function()
+								{
+										window.location.href="座位管理.html";
+								}
+								var s1=document.createElement('button');
+								var t1=document.createTextNode("上一页");
+								s1.className="button";
+								s1.onclick=function()
+								{
+									window.location.href="座位管理.html";
+								}
+								s.appendChild(t);
+								s1.appendChild(t1);
+								table2.appendChild(s);
+								table2.appendChild(s1);
+							},
+				});
+			}
+			function p3(id)
+			{
+				var id1=document.getElementById(id);
+				id1.src="images/z0.jpg";
+				$.ajax
+				({
+					url:"http://localhost:666/seat/update?seat_id="+id+"&seat_status="+0,
+					type:'get',
+					dataType:'jsonp',
+					success:function(data){
+								if(data.Detail.status==true)
+								{
+									window.location.href="座位展示.html?studio_id="+b[1]+"&row="+c[1]+"&col="+d[1];
+								}
+							},
+				});
+			}
+			function p5(id)
+			{
+				var id1=document.getElementById(id);
+				id1.src="images/z2.jpg";
+				$.ajax
+				({
+					url:"http://localhost:666/seat/update?seat_id="+id+"&seat_status="+2,
+					type:'get',
+					dataType:'jsonp',
+					success:function(data){
+								if(data.Detail.status==true)
+								{
+									window.location.href="座位展示.html?studio_id="+b[1]+"&row="+c[1]+"&col="+d[1];
+								}
+							},
+				});
+			}
+			function p6(id)
+			{
+				var id1=document.getElementById(id);
+				id1.src="images/z1.jpg";
+				$.ajax
+				({
+					url:"http://localhost:666/seat/update?seat_id="+id+"&seat_status="+1,
+					type:'get',
+					dataType:'jsonp',
+					success:function(data){
+								if(data.Detail.status==true)
+								{
+									window.location.href="座位展示.html?studio_id="+b[1]+"&row="+c[1]+"&col="+d[1];
+								}
+							},
+				});
+			}
+			function p4()
+			{
+				window.location.href="增加影厅.html";
+			}
+	</script>	
+	</body>
+
+</html>

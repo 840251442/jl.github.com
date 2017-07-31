@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>增加</title>
+		<script src="jquery-2.2.2.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			body {
+				width: 100%;
+		
+				background: url(images/22.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			.zhuce {
+				width: 800px;
+				height: 500px;
+				background: white;
+				margin-top: 100px;
+				margin: 100px auto;
+				opacity: 1;
+				text-align: center;
+			}
+			
+			.a input {
+				width: 250px;
+				height: 20px;
+				padding-left: 10px;
+				margin-right: 110px;
+				margin-top: 40px;
+				float: right;
+			}
+			
+			.zhuce span:first-child {
+				position: absolute;
+				left: 35px;
+				top: 40px;
+				display: block;
+			}
+			
+			.name {
+				position: absolute;
+				left: 95px;
+				margin-top: 85px;
+			}
+			
+			.youxiang {
+				position: absolute;
+				left: 35px;
+				margin-top: 225px;
+			}
+			.tel {
+				position: absolute;
+				left: 95px;
+				margin-top: 135px;
+			}
+			.a1{
+				position: absolute;
+				left: 80px;
+				margin-top: 180px;
+			}
+				#flag
+			{
+				position: absolute;
+				left:390px;
+				top:40px;
+			}
+			#flag1
+			{
+				position:absolute;
+				left:390px;
+				top:105px;
+			}
+			#flag2
+			{
+				position:absolute;
+				left:390px;
+				top:165px;
+			}
+			#flag3
+			{
+				position:absolute;
+				left:390px;
+				top:230px;
+			}
+			#flag4
+			{
+				position:absolute;
+				left:390px;
+				top:290px;
+			}
+			.select
+			{
+				width: 265px;
+				height: 20px;
+				padding-left: 10px;
+				margin-right: 110px;
+				margin-top: 40px;
+				float: right;
+			}
+			
+			.a {
+				width: 500px;
+				height: 500px;
+				
+				margin: 0 auto;
+				margin-top: 40px;
+				position: relative;
+			}
+			.zhuce font{display: block;position: relative;top: 40px;}
+			.box_0  {position :absolute;width: 80px;height: 30px; left:550px;bottom:150px;}
+			.box_1  {position :absolute;width: 80px;height: 30px; left:700px;bottom:150px;}
+			.box_0:hover{background: #5bf3ea;}
+			.box_1:hover{background: #5bf3ea;}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="zhuce">
+			<div class="a">
+				<span >演出厅名字:</span>
+				<select class="select" id="no">
+				<option>演出厅一号厅</option>
+				<option>演出厅二号厅</option>
+				<option>演出厅三号厅</option>
+				<option>演出厅四号厅</option>
+				<option>演出厅五号厅</option>
+				</select>
+				<br>
+				<span class="name">行:</span><input type="text" id="name" placeholder="请输入行" onblur="check1()"><span id="flag1" style="color:red"></span>
+				<br>
+				<span class="tel">列:</span><input type="text" id="tel"placeholder="请输入列" onblur="check2()"><div id="flag2" style="color:red"></div>
+				<br>
+				<span class="a1">介绍:</span><input type="text" id="add"placeholder="请输入介绍" onblur="check3()"><div id="flag3" style="color:red"></div>
+				<br>
+				<span class="youxiang">是否有座位:</span><input type="text"  id="email"placeholder="请输入0(无)或者1(有)" onblur="check4()"><div id="flag4" style="color:red"></div>
+				<br>
+			</div>
+			<input type="submit"value="确认修改"class="box_0"onclick="c1()">
+			<input type="submit"value="上一页" class="box_1" onclick="a1()">
+		</div>
+	</body>
+	<script type="text/javascript">
+		var b;
+		window.onload=function()
+		{
+			var a=document.URL.match(/\b[a-zA-Z]*\b=[^&]*/g);
+			b=a[0].split('=');
+			console.log(b[1]);
+		}
+		    function a1()
+	     {
+	     	window.location.href="影厅管理.html";
+	     }
+		var flag=false;
+		var flag1=false;
+		var flag2=false;
+		var flag3=false;
+		var flag4=false;
+	     function a1()
+	     {
+	     	window.location.href="影厅管理.html";
+	     }
+function check() {
+	var s = /^.{2,30}$/;
+	var s1 = document.getElementById("no").value;
+	if (s.test(s1)) {
+		flag = true;
+		return flag;
+	} else {
+		return flag;
+	}
+}	
+function check2() {
+	var s = /^[0-9]{1,2}$/;
+	var s1 = document.getElementById("tel").value;
+	if (s.test(s1)) {
+		flag2 = true;
+		document.getElementById("flag2").innerText = "格式正确";
+		return flag2;
+		} else {
+		document.getElementById("flag2").innerText = "格式错误";
+		return flag2;
+	}
+
+}
+function check4() {
+	var s = /^[0-1]{1}$/;
+	var s1 = document.getElementById("email").value;
+	if (s.test(s1))  {
+		flag4 = true;
+		document.getElementById("flag4").innerText = "格式正确";
+		return flag4;
+		} else {
+		document.getElementById("flag4").innerText = "格式错误";
+		return flag4;
+	}
+}
+function check1() {
+	var s = /^[0-9]{1,2}$/;
+	var s1 = document.getElementById("name").value;
+	if (s.test(s1)) {
+		flag1 = true;
+		document.getElementById("flag1").innerText = "格式正确";
+		return flag1;
+	} else {
+		flag1 = false;
+		document.getElementById("flag1").innerText = "格式错误";
+		return flag1;
+	}
+}
+function check3() {
+	var s = /^[\u4e00-\u9fa5]{2,10}$/;
+	var s1 = document.getElementById("add").value;
+	if (s.test(s1)) {
+		flag3 = true;
+		document.getElementById("flag3").innerText = "格式正确";
+		return flag3;
+	} else {
+		flag3 = false;
+		document.getElementById("flag3").innerText = "格式错误";
+		return flag3;
+	}
+}
+function c1() {
+	var result = check();
+	var result1 = check1();
+	var result2 = check2();
+	var result3 = check3();
+	var result4 = check4();
+	console.log(result);
+	console.log(result1);
+	console.log(result2);
+	console.log(result3);
+	console.log(result4);
+	if ((result == true) && (result1 == true) && (result2 == true)
+			&& (result3 == true) && (result4 == true)) {
+				var a1=document.getElementById("no").value;
+				var a2=document.getElementById("name").value;
+				var a3=document.getElementById("tel").value;
+				var a4=document.getElementById("add").value;
+				var a5=document.getElementById("email").value;
+				$.ajax
+				({
+				url:"http://localhost:666/studio/update?studio_id="+b[1]+"&studio_name="+a1+"&studio_row_count="+a2+"&studio_col_count="+a3+"&studio_introduction="+a4+"&studio_flag="+a5,
+
+				type:'get',
+				dataType:'jsonp',
+				success:function(data){
+					if(data.Detail.status==true)
+					{
+						window.location.href="影厅管理.html";
+					}
+				},
+				});
+	} 
+}
+	</script>
+</html>

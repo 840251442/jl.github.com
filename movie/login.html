@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="jquery-2.2.2.min.js"></script>
+		<title>皮皮虾影院</title>
+		<link rel="stylesheet" type="text/css" href="1.css" />
+	</head>
+
+	<body>
+
+		<!--登录-->
+		<div class="title">
+			<img src="images/12.jpg">..
+			<ul>
+				<li>
+					<a href="">联系我们</a>
+				</li>
+
+				<li>
+					<a href="">观影指南</a>
+				</li>
+				<li>
+					<a href="">影院介绍</a>
+				</li>
+
+				<li>
+					<a href="">首页</a>
+				</li>
+			</ul>
+		</div>
+		<div class="login_box">
+			<div class="box login_box_neirong">
+					<span>会员登录</span>
+					<a href="注册.html">立即注册></a>
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td><img src="images/input_icon1.jpg" />
+								<input type="text" placeholder="请输入账户"id="use"/></td>
+						</tr>
+						<tr>
+							<td><img src="images/input_icon2.jpg" />
+								<input type="password" placeholder="请输入密码"id="pass"/></td>
+						</tr>
+						
+						<tr>
+							<td><input type="checkbox"> 记住用户名
+								<a href="员工修改密码.html" class="wz">修改密码</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="submit" style="width:300px;height:40px;font-weight:bold"onclick="show()" value="登录"/></td>
+						</tr>
+					</table>
+			</div>
+		</div>
+	<script type="text/javascript">
+		function show()
+	{
+		var use=document.getElementById("use").value;
+		var pass=document.getElementById("pass").value;
+		$.ajax
+		({
+			url:"http://localhost:666/user/userLogin?emp_no="+use+"&emp_pass="+pass,
+			type:'get',
+			dataType:'jsonp',
+			success:function(data){
+				console.log(data.Detail.status);
+				if(data.Detail.status==1)
+				{
+					window.location.href="administrator.html";
+				}
+				else if(data.Detail.status==2)
+				{
+					window.location.href="用户登录.html";
+				}
+			},
+		});
+	}
+	</script>
+	</body>
+
+</html>
